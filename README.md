@@ -1,4 +1,4 @@
-### Automatically create new Agent (self-hosted) Ubuntu Server for Azure DevOps(ADO) via Terraform
+# Automatically create new Agent (self-hosted) Ubuntu Server for Azure DevOps(ADO) via Terraform
 
 ## What will be deployed via Terraform?
 - Resource Group to where all related Azure DevOps self-hosted agent resources will be situated
@@ -22,7 +22,7 @@
 
 ## Steps
 
-# To Use
+### To Use
 - Change the values of parameter in "ado.tfvars.sample" file and rename to "ado.tfvars"
 - Review "ado-agent.sh", update PAT token as we generated earlier.
 
@@ -34,9 +34,9 @@
 - After confirmed and validated your parameter, execute command below to create new Azure DevOps Agent.
 `terraform apply -auto-approve -var-file=ado.tfvar` OR `terraform apply tfplan -var-file=ado.tfvar`
 
-# To Test New Agent Pool
+### To Test New Agent Pool
 - Use 'pipeline.yaml' as our sample Build(CI) pipeline script
 
-# Clean Up
+### Clean Up
 - To clean up all the resources provisoned by Terraform , run command below:
 `terraform destroy -auto-approve -var-file=ado.tfvar` 
