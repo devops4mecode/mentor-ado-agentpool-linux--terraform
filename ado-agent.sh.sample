@@ -1,0 +1,16 @@
+#Download ADO Agent
+sudo mkdir /myagent 
+cd /myagent
+sudo wget https://vstsagentpackage.azureedge.net/agent/2.179.0/vsts-agent-linux-x64-2.179.0.tar.gz
+sudo tar zxvf ./vsts-agent-linux-x64-2.179.0.tar.gz
+sudo chmod -R 777 /myagent
+
+#Unattended install
+runuser -l do4m-admin -c '/myagent/config.sh --unattended --agent [AGENT NAMME] --url https://dev.azure.com/[YOUR ORG NAME]--auth pat --token [YOUR PAT] --pool [YOUR AGENT POOL]'
+
+#Configure as a service
+sudo /myagent/svc.sh install
+
+# Start the ADO Agent service
+sudo /myagent/svc.sh start
+exit 0
