@@ -25,7 +25,7 @@
 ### To Use
 - Change the values of parameter in "ado.tfvars.sample" file and rename to "ado.tfvars"
 - Review "ado-agent.sh", update PAT token as we generated earlier.
-
+- Initial our Terraform script by execute command below:
 `terraform init`
 - Validate and check your terraform format:
 `terraform validate && terraform fmt`
@@ -37,6 +37,6 @@
 ### To Test New Agent Pool
 - Use 'pipeline.yaml' as our sample Build(CI) pipeline script
 
-### Clean Up
+# Clean Up
 - To clean up all the resources provisoned by Terraform , run command below:
 `terraform destroy -auto-approve -var-file=ado.tfvar` 
